@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website perkenalan diri Haidar Farras Mubarok - Mahasiswa Teknik Logistik UPI">
+    <title>Profil HAIDAR | Teknik Logistik UPI</title>
+
+    <style>
+        /* ===== 1. VARIABEL WARNA ===== */
+        :root {
+            --bg: #050805;
+            --bg-card: #0d120d;
+            --neon: #39FF14;
+            --neon-2: #00FF88;
+            --text: #F5F5F5;
+            --text-soft: #B8C0B8;
+            --border: rgba(57, 255, 20, 0.25);
+            --glow: 0 0 18px rgba(57, 255, 20, 0.45);
+        }
+
+        /* ===== 2. PENGATURAN DASAR ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--neon);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: var(--neon-2);
+            text-shadow: var(--glow);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        section {
+            padding: 80px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        h2 span {
+            color: var(--neon);
+        }
+
+        .garis {
+            width: 70px;
+            height: 4px;
+            border-radius: 4px;
+            margin-bottom: 36px;
+            background: linear-gradient(90deg, var(--neon), var(--neon-2));
+            box-shadow: var(--glow);
+        }
+
+        /* ===== 3. HEADER & NAVIGASI ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 8, 5, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--neon);
+            letter-spacing: 2px;
+            text-shadow: var(--glow);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 20px;
+        }
+
+        nav a {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--neon);
+            border-bottom-color: var(--neon);
+            text-shadow: none;
+        }
+
+        /* ===== 4. HERO / BERANDA ===== */
+        #beranda {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            flex-wrap: wrap-reverse;
+        }
+
+        .hero-teks {
+            flex: 1 1 380px;
+        }
+
+        .sapaan {
+            color: var(--neon-2);
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-teks h1 {
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.15;
+            margin: 10px 0;
+            background: linear-gradient(90deg, #ffffff, var(--neon));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .panggilan {
+            color: var(--text-soft);
+            margin-bottom: 8px;
+        }
+
+        .panggilan b {
+            color: var(--neon);
+        }
+
+        .badge-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0;
+        }
+
+        .badge {
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            border: 1px solid var(--neon);
+            color: var(--neon);
+            background: rgba(57, 255, 20, 0.07);
+        }
+
+        .deskripsi {
+            color: var(--text-soft);
+            max-width: 560px;
+            margin-bottom: 28px;
+        }
+
+        .tombol-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .tombol {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .tombol-utama {
+            background: var(--neon);
+            color: #000;
+            box-shadow: var(--glow);
+        }
+
+        .tombol-utama:hover {
+            background: var(--neon-2);
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 0 28px rgba(57, 255, 20, 0.7);
+            text-shadow: none;
+        }
+
+        .tombol-garis {
+            border: 2px solid var(--neon);
+            color: var(--neon);
+        }
+
+        .tombol-garis:hover {
+            background: rgba(57, 255, 20, 0.12);
+            transform: translateY(-3px);
+            box-shadow: var(--glow);
+        }
+
+        .hero-foto {
+            flex: 0 1 340px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .foto-bingkai {
+            width: 300px;
+            height: 360px;
+            border-radius: 24px;
+            padding: 4px;
+            background: linear-gradient(
+                145deg,
+                var(--neon),
+                transparent 60%,
+                var(--neon-2)
+            );
+            box-shadow: var(--glow);
+        }
+
+        .foto-bingkai img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 21px;
+            background: #111;
+        }
+
+        /* ===== 5. KARTU UMUM ===== */
+        .grid {
+            display: grid;
+            gap: 22px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .kartu {
+            background: linear-gradient(160deg, var(--bg-card), #080b08);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px;
+            transition: 0.3s;
+        }
+
+        .kartu:hover {
+            transform: translateY(-6px);
+            border-color: var(--neon);
+            box-shadow: var(--glow);
+        }
+
+        .kartu h3 {
+            color: var(--neon);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .kartu p {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+        }
+
+        .ikon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* ===== 6. TENTANG SAYA ===== */
+        .tentang-wrap {
+            display: grid;
+            gap: 28px;
+            grid-template-columns: 1fr 1.6fr;
+            align-items: start;
+        }
+
+        .data-diri li {
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border);
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .data-diri li span:first-child {
+            color: var(--text-soft);
+        }
+
+        .data-diri li span:last-child {
+            color: var(--neon);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .tentang-teks p {
+            color: var(--text-soft);
+            margin-bottom: 14px;
+        }
+
+        .tentang-teks strong {
+            color: var(--text);
+        }
+
+        /* ===== 7. KETERAMPILAN ===== */
+        .skill-judul {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-judul h3 {
+            margin: 0;
+        }
+
+        .bar {
+            height: 8px;
+            background: #1a221a;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        /* Ubah --level pada HTML untuk mengganti tingkat kemampuan */
+        .bar div {
+            height: 100%;
+            width: var(--level);
+            background: linear-gradient(90deg, var(--neon), var(--neon-2));
+            box-shadow: var(--glow);
+            border-radius: 8px;
+        }
+
+        /* ===== 8. PENGALAMAN / TIMELINE ===== */
+        .timeline {
+            border-left: 3px solid var(--neon);
+            padding-left: 26px;
+            display: grid;
+            gap: 22px;
+            margin-left: 6px;
+            box-shadow: -6px 0 14px -10px var(--neon);
+        }
+
+        .timeline .kartu {
+            position: relative;
+        }
+
+        .timeline .kartu::before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 30px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--neon);
+            box-shadow: var(--glow);
+        }
+
+        .periode {
+            color: var(--neon-2);
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        .peran {
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        /* ===== 9. CITA-CITA ===== */
+        .cita-box {
+            padding: 36px;
+            border-radius: 20px;
+            border: 1px solid var(--neon);
+            background: linear-gradient(
+                135deg,
+                rgba(57, 255, 20, 0.10),
+                rgba(5, 8, 5, 1) 60%
+            );
+            box-shadow: var(--glow);
+        }
+
+        .cita-box p {
+            color: var(--text-soft);
+            margin-bottom: 14px;
+        }
+
+        .cita-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cita-box strong {
+            color: var(--neon);
+        }
+
+        /* ===== 10. KONTAK & FOOTER ===== */
+        .kontak-list {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .kontak-list .kartu {
+            text-align: center;
+        }
+
+        .kontak-list a {
+            word-break: break-all;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-soft);
+            font-size: 0.9rem;
+        }
+
+        footer b {
+            color: var(--neon);
+        }
+
+        /* ===== 11. RESPONSIF ===== */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 18px;
+            }
+
+            .nav-wrap {
+                justify-content: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 4px 14px;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            #beranda {
+                min-height: auto;
+                padding-top: 40px;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .badge-wrap,
+            .tombol-wrap {
+                justify-content: center;
+            }
+
+            .deskripsi {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .foto-bingkai {
+                width: 240px;
+                height: 290px;
+            }
+
+            .tentang-wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .cita-box {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER & NAVIGASI ================= -->
+    <header>
+        <div class="nav-wrap">
+
+            <!-- Logo teks: inisial nama -->
+            <div class="logo">AHLAN MINKUM AKHI</div>
+
+            <nav>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#tentang">Tentang Saya</a></li>
+                    <li><a href="#minat">Minat</a></li>
+                    <li><a href="#keterampilan">Keterampilan</a></li>
+                    <li><a href="#pengalaman">Pengalaman</a></li>
+                    <li><a href="#cita-cita">Cita-cita</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= HERO / BERANDA ================= -->
+        <section id="beranda">
+
+            <div class="hero-teks">
+                <p class="sapaan">
+                    Welcome To My Introduction Website.
+                </p>
+
+                <h1>Haidar Farras Mubarok</h1>
+
+                <p class="panggilan">
+                    Nama panggilan: <b>FARRAS</b>
+                </p>
+
+                <div class="badge-wrap">
+                    <span class="badge">Mahasiswa</span>
+                    <span class="badge">Teknik Logistik</span>
+                    <span class="badge">
+                        Universitas Pendidikan Indonesia
+                    </span>
+                </div>
+
+                <p class="deskripsi">
+                    Mahasiswa Teknik Logistik Universitas Pendidikan
+                    Indonesia angkatan 2024 yang memiliki rasa ingin
+                    tahu tinggi, ulet, dan senang belajar hal baru.
+                    Website ini adalah ruang untuk saya memperkenalkan diri.
+                </p>
+
+                <div class="tombol-wrap">
+                    <a href="#tentang" class="tombol tombol-utama">
+                        Kenali Saya
+                    </a>
+
+                    <a href="#kontak" class="tombol tombol-garis">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-foto">
+                <div class="foto-bingkai">
+                    <img
+                        src="C:\Users\Haidar paras\Pictures\HMTL\foto-profil.jpeg"
+                        alt="Foto profil Haidar Farras"
+                        width="300"
+                        height="360"
+                    >
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= TENTANG SAYA ================= -->
+        <section id="tentang">
+
+            <h2>About <span>Me</span></h2>
+            <div class="garis"></div>
+
+            <div class="tentang-wrap">
+
+                <div class="kartu">
+                    <ul class="data-diri">
+
+                        <li>
+                            <span>Nama Lengkap</span>
+                            <span>Haidar Farras Mubarok</span>
+                        </li>
+
+                        <li>
+                            <span>Nama Panggilan</span>
+                            <span>FARRAS</span>
+                        </li>
+
+                        <li>
+                            <span>Program Studi</span>
+                            <span>Teknik Logistik</span>
+                        </li>
+
+                        <li>
+                            <span>Universitas</span>
+                            <span>Universitas Pendidikan Indonesia</span>
+                        </li>
+
+                        <li>
+                            <span>Angkatan</span>
+                            <span>2024</span>
+                        </li>
+
+                        <li>
+                            <span>Bahasa</span>
+                            <span>Arab, Inggris, Indonesia</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="tentang-teks">
+
+                    <p>
+                        Saya <strong>Haidar Farras Mubarok</strong>,
+                        mahasiswa Teknik Logistik Universitas Pendidikan
+                        Indonesia angkatan 2024. Saya adalah pribadi yang
+                        memiliki rasa ingin tahu yang tinggi, ulet, dan
+                        pantang menyerah. Saya mampu beradaptasi dengan
+                        baik di lingkungan baru dan percaya bahwa kita
+                        dapat belajar dari siapa saja.
+                    </p>
+
+                    <p>
+                        Dengan penguasaan tiga bahasa, yaitu
+                        <strong>bahasa Arab, bahasa Inggris, dan bahasa
+                        Indonesia</strong>, saya mampu berkomunikasi dan
+                        berkolaborasi dengan siapa pun dari latar belakang
+                        apa pun. Kemampuan ini membantu saya membangun
+                        relasi, memahami sudut pandang yang beragam, dan
+                        bekerja sama dalam tim.
+                    </p>
+
+                    <p>
+                        Melalui perkuliahan Teknik Logistik, saya terus
+                        belajar bagaimana barang, informasi, dan sumber
+                        daya dapat dikelola secara efisien. Saya juga
+                        tertarik mempelajari dasar-dasar pembuatan website
+                        sebagai bekal menghadapi dunia yang semakin digital.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MINAT ================= -->
+        <section id="minat">
+
+            <h2>Minat <span>Saya</span></h2>
+            <div class="garis"></div>
+
+            <!--
+                Ubah judul dan deskripsi minat sesuai
+                dengan minat Anda yang sebenarnya.
+            -->
+
+            <div class="grid">
+
+                <div class="kartu">
+                    <div class="ikon">📦</div>
+                    <h3>MINAT 1: Pergudangan &amp; Persediaan</h3>
+                    <p>
+                        Saya tertarik pada bidang pergudangan dan manajemen persediaan karena pengelolaan ruang, tata letak, dan stok barang berpengaruh besar terhadap efisiensi operasional. Saya ingin memahami bagaimana gudang dapat dikelola agar proses penyimpanan dan pengambilan barang menjadi lebih efektif.
+                    </p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">🚚</div>
+                    <h3>MINAT 2: COLD CHAIN</h3>
+                    <p>
+                        Saya tertarik pada bidang cold chain karena menjaga kualitas produk yang sensitif terhadap suhu, seperti makanan segar dan obat-obatan, merupakan tantangan penting dalam rantai pasok. Saya ingin mempelajari bagaimana teknologi dan pengendalian suhu dapat menjaga kualitas produk sekaligus mengurangi kerusakan dan pemborosan.
+                    </p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">🌱</div>
+                    <h3>MINAT 3: Green Logistics</h3>
+                    <p>
+                        Saya tertarik pada Green logistics karena kegiatan logistik tidak hanya perlu efisien, tetapi juga memperhatikan dampaknya terhadap lingkungan. Saya ingin memahami bagaimana transportasi, pergudangan, dan distribusi dapat dilakukan dengan lebih ramah lingkungan tanpa mengabaikan efektivitas operasional.
+                    </p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">🤖</div>
+                    <h3>MINAT 4: Teknologi &amp; Otomatisasi</h3>
+                    <p>
+                        Saya tertarik pada teknologi dan otomatisasi karena perkembangan teknologi dapat mengubah cara perusahaan menjalankan kegiatan logistik. Saya ingin mempelajari bagaimana robot, sensor, dan sistem otomatis dapat membantu meningkatkan produktivitas, ketepatan proses, dan keselamatan kerja.
+                    </p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">💻</div>
+                    <h3>MINAT 5: Sistem Informasi Logistik</h3>
+                    <p>
+                        Saya tertarik pada sistem informasi logistik karena pengelolaan data yang akurat sangat penting dalam mendukung keputusan operasional dan koordinasi rantai pasok. Saya ingin memahami bagaimana sistem digital dapat mengintegrasikan informasi persediaan, pergudangan, dan distribusi agar proses logistik lebih terencana dan efisien.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= HOBI ================= -->
+        <section id="hobi">
+
+            <h2>Hobi dan <span>Aktivitas Favorit</span></h2>
+            <div class="garis"></div>
+
+            <!-- Isi 3-4 hobi sesuai aktivitas yang sebenarnya. -->
+
+            <div class="grid">
+
+                <div class="kartu">
+                    <div class="ikon">⭐</div>
+                    <h3>Menggambar</h3>
+                    <p>Saya menyukai menggambar karena menjadi sarana untuk mengekspresikan kreativitas dan menuangkan ide ke dalam bentuk visual. Aktivitas ini juga melatih ketelitian, kesabaran, dan kemampuan memperhatikan detail.</p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">⭐</div>
+                    <h3>Membaca</h3>
+                    <p>Saya menyukai membaca karena dapat menambah wawasan, memperluas cara pandang, dan memberikan kesempatan untuk mempelajari hal-hal baru. Bagi saya, membaca merupakan cara sederhana untuk terus mengembangkan diri dan memperkaya pengetahuan.</p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">⭐</div>
+                    <h3>Hiking</h3>
+                    <p>Saya menyukai hiking karena memberikan kesempatan untuk menikmati alam sekaligus melatih ketahanan fisik dan mental. Aktivitas ini juga mengajarkan kedisiplinan, kesabaran, serta pentingnya menjaga lingkungan.</p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">⭐</div>
+                    <h3>Combat Sport</h3>
+                    <p>Saya tertarik pada combat sport karena melatih kekuatan fisik, kecepatan, fokus, dan kedisiplinan. Selain meningkatkan kebugaran, aktivitas ini mengajarkan pengendalian diri, sportivitas, dan kemampuan menghadapi tantangan dengan mental yang kuat.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= KETERAMPILAN ================= -->
+        <section id="keterampilan">
+
+            <h2>Keterampilan</h2>
+            <div class="garis"></div>
+
+            <!--
+                Ubah nilai persentase dan --level sesuai
+                kemampuan Anda yang sebenarnya.
+            -->
+
+            <div class="grid">
+
+                <div class="kartu">
+                    <div class="skill-judul">
+                        <h3>Komunikasi</h3>
+                        <span>[45%]</span>
+                    </div>
+
+                    <p>
+                        Saya memiliki ketertarikan dalam mengembangkan kemampuan komunikasi karena penyampaian informasi yang jelas sangat penting dalam membangun hubungan dan menghindari kesalahpahaman. Penguasaan bahasa Arab, Inggris, dan Indonesia juga menjadi bekal untuk berkomunikasi dengan orang dari berbagai latar belakang.
+                    </p>
+
+                    <div class="bar">
+                        <div style="--level: 50%"></div>
+                    </div>
+                </div>
+
+                <div class="kartu">
+                    <div class="skill-judul">
+                        <h3>Kerja Sama Tim</h3>
+                        <span>[25%]</span>
+                    </div>
+
+                    <p>
+Saya memandang kerja sama tim sebagai keterampilan penting untuk mencapai tujuan bersama melalui pertukaran ide, pembagian tanggung jawab, dan sikap saling menghargai. Kemampuan ini membantu menciptakan lingkungan kerja yang produktif dan mendukung penyelesaian tugas secara efektif.
+		   </p>
+
+                    <div class="bar">
+                        <div style="--level: 50%"></div>
+                    </div>
+                </div>
+
+                <div class="kartu">
+                    <div class="skill-judul">
+                        <h3>Manajemen Waktu</h3>
+                        <span>[20%]</span>
+                    </div>
+
+                    <p>Saya berusaha mengembangkan manajemen waktu agar dapat menentukan prioritas, menyelesaikan tugas sesuai tenggat, dan menyeimbangkan kegiatan akademik dengan aktivitas lainnya. Keterampilan ini penting untuk membentuk kebiasaan yang disiplin, teratur, dan bertanggung jawab.</p>
+
+                    <div class="bar">
+                        <div style="--level: 50%"></div>
+                    </div>
+                </div>
+
+                <div class="kartu">
+                    <div class="skill-judul">
+                        <h3>Adaptif</h3>
+                        <span>[25%]</span>
+                    </div>
+
+                    <p>
+                        Saya tertarik mengembangkan kemampuan beradaptasi karena setiap lingkungan dan situasi memiliki tantangan yang berbeda. Sikap adaptif membantu saya menyesuaikan diri dengan perubahan, mempelajari hal baru, serta menghadapi situasi yang belum pernah ditemui dengan pikiran terbuka
+                    </p>
+
+                    <div class="bar">
+                        <div style="--level: 50%"></div>
+                    </div>
+                </div>
+
+                <div class="kartu">
+                    <div class="skill-judul">
+                        <h3>Problem solving</h3>
+                        <span>[15%]</span>
+                    </div>
+
+                    <p>Saya tertarik mengembangkan kemampuan pemecahan masalah karena setiap tantangan membutuhkan pemahaman yang baik terhadap penyebabnya sebelum menentukan solusi. Keterampilan ini melatih saya berpikir kritis, menganalisis berbagai pilihan, dan mengambil keputusan yang tepat, terutama dalam menghadapi permasalahan di bidang Teknik Logistik</p>
+
+                    <div class="bar">
+                        <div style="--level: 50%"></div>
+                    </div>
+                </div>
+
+                <div class="kartu">
+                    <div class="skill-judul">
+                        <h3>Microsoft Skill</h3>
+                        <span>[20%]</span>
+                    </div>
+
+                    <p>
+                        Saya tertarik mengembangkan kemampuan Microsoft Office karena perangkat ini sangat membantu dalam mengolah data, menyusun dokumen, dan menyampaikan informasi secara efektif. Penguasaan Microsoft Word, Excel, dan PowerPoint menjadi bekal penting dalam menunjang kegiatan akademik maupun profesional, khususnya di bidang Teknik Logistik yang membutuhkan pengelolaan data, analisis informasi, dan penyajian laporan secara terstruktur.
+                    </p>
+
+                    <div class="bar">
+                        <div style="--level: 50%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= PENGALAMAN ORGANISASI ================= -->
+        <section id="pengalaman">
+
+            <h2>
+                Pengalaman Organisasi <span>dan Kegiatan</span>
+            </h2>
+
+            <div class="garis"></div>
+
+            <div class="timeline">
+
+                <!-- Salin blok kartu ini untuk menambah pengalaman. -->
+
+                <div class="kartu">
+                    <p class="periode">2024-2025</p>
+                    <h3>Himpunan Mahasiswa Teknik Logistik</h3>
+                    <p class="peran">Staff Pembinaan Anggota</p>
+                    <p>Memberikan wadah Akademik nonformal, dan non Akademik bagi mahasiswa Teknik Logistik dengan memberikan dan mengadakan kegiatan-kegiatan positif dan menyenangkan, untuk menjaga silaturahmi dan kekompakan antar anggota secara rutin dan tahunan.</p>
+                </div>
+
+                <div class="kartu">
+                    <p class="periode">2025-2026</p>
+                    <h3>UPI Scout Competition</h3>
+                    <p class="peran">Ketua Pelaksana</p>
+                    <p>UPI Scout competition adalah sebuah ajang kompetisi yang diadakan untuk mendorong semangat kebersamaan dan keterampilan scouting di kalangan penggalang se-jawa barat. Dibentuk sebagai wadah mengasah skill para penggalang muda untuk terus berkarya dan bersilaturahmi antar pangkalan.</p>
+                </div>
+
+                <!--
+                    Jika belum memiliki pengalaman organisasi,
+                    ubah judul menjadi "Kegiatan dan Pengalaman Belajar".
+                    Isi bagian ini dengan kegiatan nyata, seperti tugas
+                    kuliah, pelatihan, webinar, atau proyek pembelajaran.
+                -->
+
+            </div>
+        </section>
+
+        <!-- ================= CITA-CITA ================= -->
+        <section id="cita-cita">
+
+            <h2>Cita-cita <span>dan Tujuan</span></h2>
+            <div class="garis"></div>
+
+            <div class="cita-box">
+
+                <p>
+                    <strong>Karier yang diinginkan:</strong>
+                     Saya bercita-cita memulai karier sebagai Supervisor Gudang dan berkembang menjadi Manajer Gudang, khususnya di bidang cold warehouse dan cold chain. Saya ingin membangun kompetensi dalam pengelolaan operasional, penataan gudang, pengendalian suhu, serta pengawasan kualitas produk agar kegiatan pergudangan berjalan efektif dan efisien.
+                </p>
+
+                <p>
+                    <strong>Bidang yang diminati:</strong>
+                    Saya memiliki ketertarikan pada pergudangan, warehouse layouting, dan cold chain, terutama dalam pengelolaan fasilitas penyimpanan produk yang membutuhkan pengendalian suhu khusus. Saya juga tertarik mengintegrasikan bidang-bidang tersebut dengan green logistics untuk menciptakan sistem logistik yang efisien sekaligus ramah lingkungan.
+                </p>
+
+                <p>
+                    <strong>Tujuan selama kuliah:</strong>
+                    Saya ingin menjadi mahasiswa yang disiplin, taat aturan, bertanggung jawab, dan profesional. Selain memperkuat pemahaman akademik, saya berupaya membangun pola pikir yang kritis, sistematis, dan berorientasi pada pemecahan masalah sebagai bekal menghadapi tantangan di dunia kerja.
+                </p>
+
+                <p>
+                    <strong>Kontribusi:</strong>
+                    Saya ingin turut mengembangkan ekosistem cold chain yang tidak hanya berfokus pada penyimpanan dan penjagaan kualitas produk, tetapi juga memperhatikan keberlanjutan lingkungan. Melalui penerapan tata letak gudang yang efisien, pengelolaan energi, pengendalian suhu yang tepat, dan pengurangan pemborosan, saya berharap dapat berkontribusi dalam menciptakan sistem rantai dingin yang efektif, berkelanjutan, dan memiliki dampak lingkungan yang lebih rendah.
+                
+                </p>
+
+            </div>
+        </section>
+
+        <!-- ================= KONTAK ================= -->
+        <section id="kontak">
+
+            <h2>Hubungi <span>Saya</span></h2>
+            <div class="garis"></div>
+
+            <div class="kontak-list">
+
+                <div class="kartu">
+                    <div class="ikon">✉️</div>
+                    <h3>Email</h3>
+
+                    <!-- Ganti dengan email asli. -->
+                    <p>
+                        <a href="mailto:mubarok.haidar05@upi.edu">
+                            mubarok.haidar05@upi.edu
+                        </a>
+                    </p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">🐙</div>
+                    <h3>GitHub</h3>
+
+                    <!-- Ganti dengan URL profil GitHub asli. -->
+                    <p>
+                        <a
+                            href="https://github.com/haidarfarras051-maker"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            https://github.com/haidarfarras051
+                        </a>
+                    </p>
+                </div>
+
+                <div class="kartu">
+                    <div class="ikon">💼</div>
+                    <h3>LinkedIn</h3>
+
+                    <!-- Ganti URL ini atau hapus kartu jika tidak digunakan. -->
+                    <p>
+                        <a
+                            href="https://www.linkedin.com/in/haidar-farras-57baa9370?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            linkedin.com/in/haidar farras
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>
+            &copy; 2026 <b>Haidar Farras Mubarok</b>
+            &mdash; Teknik Logistik, Universitas Pendidikan Indonesia
+        </p>
+    </footer>
+
+</body>
+</html>
